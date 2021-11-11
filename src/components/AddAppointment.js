@@ -3,8 +3,7 @@ import { useState } from "react";
 
 const AddAppointment = ({ onSendAppoitment, lastId }) => {
   const clearData = {
-    ownerName: '',
-    petName: '',
+    patientName: '',
     aptDate: '',
     aptTime: '',
     aptNotes: ''
@@ -16,8 +15,7 @@ const AddAppointment = ({ onSendAppoitment, lastId }) => {
   function formDataPublish() {
     const appointmentInfo = {
       id: lastId + 1,
-      ownerName: formData.ownerName,
-      petName: formData.petName,
+      patientName: formData.patientName,
       aptDate: formData.aptDate + ' ' + formData.aptTime,
       aptNotes: formData.aptNotes
     }
@@ -36,29 +34,16 @@ const AddAppointment = ({ onSendAppoitment, lastId }) => {
         toggleForm &&
         <div className="border-r-2 border-b-2 border-l-2 border-light-blue-500 rounded-b-md pl-4 pr-4 pb-4">
         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
-          <label htmlFor="ownerName" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-            Owner Name
+          <label htmlFor="patientName" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            Patient Name
           </label>
           <div className="mt-1 sm:mt-0 sm:col-span-2">
-            <input type="text" name="ownerName" id="ownerName"
+            <input type="text" name="patientName" id="patientName"
               className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" 
-              onChange={(event) => {setFormData({ ...formData, ownerName: event.target.value })}}
-              value={formData.ownerName}
+              onChange={(event) => {setFormData({ ...formData, patientName: event.target.value })}}
+              value={formData.patientName}
               />
               
-          </div>
-        </div>
-
-        <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
-          <label htmlFor="petName" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-            Pet Name
-          </label>
-          <div className="mt-1 sm:mt-0 sm:col-span-2">
-            <input type="text" name="petName" id="petName"
-              className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" 
-              onChange={(event) => {setFormData({ ...formData, petName: event.target.value })}}
-              value={formData.petName}
-              />
           </div>
         </div>
 

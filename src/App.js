@@ -7,14 +7,13 @@ import AppointmentInfo from "./components/AppointmentInfo"
 function App() {
   let[appointmentList, setAppointmentList] = useState([]);
   let [query, setQuery] = useState("");
-  let [sortBy, setSortBy] = useState("petName");
+  let [sortBy, setSortBy] = useState("patientName");
   let [orderBy, setOrderBy] = useState("asc");
 
   const filteredAppointments = appointmentList.filter(
     item => {
       return (
-        item.petName.toLowerCase().includes(query.toLowerCase()) ||
-        item.ownerName.toLowerCase().includes(query.toLowerCase()) ||
+        item.patientName.toLowerCase().includes(query.toLowerCase()) ||
         item.aptNotes.toLowerCase().includes(query.toLowerCase())
       )
     }
