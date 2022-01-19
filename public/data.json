@@ -1,14 +1,8 @@
 [
     {
       "id": "0",
-      "patientName": "Reggie Tupp",
-      "aptNotes": "Grade one sprained ankle",
+      "patientName": "Example",
+      "aptNotes": "A vanilla database was implemented for this project. Try adding another appointment my clicking Add Appointment",
       "aptDate": "2021-11-28 13:30"
-    },
-    {
-      "id": "1",
-      "patientName": "Bob Miller",
-      "aptNotes": "Grade one posterior cruciate ligament (PCL) injury. No need for surgery. Send to therapy",
-      "aptDate": "2021-11-11 13:30"
     }
   ]

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { BiCalendar } from "react-icons/bi"
-import Search from "./components/Search" 
+import Search from "./components/Search"
 import AddAppointment from "./components/AddAppointment"
 import AppointmentInfo from "./components/AppointmentInfo"
 
@@ -20,7 +20,7 @@ function App() {
   ).sort((a,b) => {
     let order = (orderBy === 'asc') ? 1 : -1;
     return (
-      a[sortBy].toLowerCase() < b[sortBy].toLowerCase() 
+      a[sortBy].toLowerCase() < b[sortBy].toLowerCase()
       ? -1 * order : 1 * order
     )
   })
@@ -41,12 +41,12 @@ function App() {
     <div className="App container mx-auto mt-3 font-thin">
       <h1 className="text-5xl mb-3">
         <BiCalendar className="inline-block text-red-400 align top"/>Your Appointments</h1>
-        <AddAppointment 
+        <AddAppointment
           onSendAppoitment={myAppointment => setAppointmentList([...appointmentList, myAppointment])}
           lastId={appointmentList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}
         />
         <Search query={query}
-        onQueryChange={myQuery => setQuery(myQuery)} 
+        onQueryChange={myQuery => setQuery(myQuery)}
         orderBy={orderBy}
         onOrderByChange={mySort => setOrderBy(mySort)}
         sortBy={sortBy}
@@ -58,12 +58,12 @@ function App() {
               <AppointmentInfo key={appointment.id}
               appointment={appointment}
               onDeleteAppointment = {
-                appointmentId => 
+                appointmentId =>
                   setAppointmentList(appointmentList.filter(appointment => appointment.id !== appointmentId))
               }
               />
             ))
-          }          
+          }
         </ul>
     </div>
   );
